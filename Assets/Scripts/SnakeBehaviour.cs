@@ -6,15 +6,14 @@ public class SnakeBehaviour : MonoBehaviour
 {
     private Vector2 _direction = Vector2.right;
 
-    private List<Transform> _segments;
+    private List<Transform> _segments = new List<Transform>();
 
     public Transform segmentPrefab;
     public int initialSize = 4;
 
     private void Start()
     {
-        _segments = new List<Transform>();
-        _segments.Add(this.transform);
+        ResetState();
     }
 
     private void Update()
@@ -56,7 +55,6 @@ public class SnakeBehaviour : MonoBehaviour
     {
         Transform segment = Instantiate(this.segmentPrefab);
         segment.position = _segments[_segments.Count - 1].position;
-
         _segments.Add(segment);
     }
 
@@ -66,9 +64,17 @@ public class SnakeBehaviour : MonoBehaviour
         {
             Destroy(_segments[i].gameObject);
         }
-
         _segments.Clear();
         _segments.Add(this.transform);
+
+        for (int i = 0; i < initialSize; i++) 
+        {
+            _segments.Add(Instantiate(this.segmentPrefab));
+
+        }
+
+        this.transform.position = Vector3.zero;
+      
     }
 
     private void OnTriggerEnter2D(Collider2D other)
