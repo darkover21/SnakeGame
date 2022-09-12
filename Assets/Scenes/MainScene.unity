@@ -135,6 +135,7 @@ GameObject:
   - component: {fileID: 70104991}
   - component: {fileID: 70104990}
   - component: {fileID: 70104993}
+  - component: {fileID: 70104994}
   m_Layer: 0
   m_Name: Apple
   m_TagString: Food
@@ -227,7 +228,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 70104989}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.2, y: -0.5993031, z: 0}
+  m_LocalPosition: {x: -0.71, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -246,6 +247,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gridArea: {fileID: 1112399131}
+--- !u!114 &70104994
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 70104989}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4230898db5abf34ea16f2cd220c7def, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  executeInUpdate: 0
+  anchorType: 4
+  anchorOffset: {x: -0.71, y: 0, z: 0}
 --- !u!1 &483546840
 GameObject:
   m_ObjectHideFlags: 0
@@ -257,6 +273,7 @@ GameObject:
   - component: {fileID: 483546842}
   - component: {fileID: 483546841}
   - component: {fileID: 483546843}
+  - component: {fileID: 483546844}
   m_Layer: 0
   m_Name: Wall (3)
   m_TagString: Obstacle
@@ -323,7 +340,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 483546840}
   m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: -15, z: 0}
+  m_LocalPosition: {x: 0, y: -14.957175, z: 0}
   m_LocalScale: {x: 1, y: 52.2, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -355,6 +372,21 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &483546844
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 483546840}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4230898db5abf34ea16f2cd220c7def, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  executeInUpdate: 1
+  anchorType: 1
+  anchorOffset: {x: 0, y: 0.51, z: 0}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -366,6 +398,7 @@ GameObject:
   - component: {fileID: 519420032}
   - component: {fileID: 519420031}
   - component: {fileID: 519420029}
+  - component: {fileID: 519420030}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -381,6 +414,23 @@ AudioListener:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_Enabled: 1
+--- !u!114 &519420030
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 519420028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb425007da44ca64eaa8af9c47160dee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  wireColor: {r: 1, g: 1, b: 1, a: 1}
+  UnitsSize: 55
+  constraint: 0
+  camera: {fileID: 519420031}
+  executeInUpdate: 0
 --- !u!20 &519420031
 Camera:
   m_ObjectHideFlags: 0
@@ -408,7 +458,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 15
+  orthographic size: 15.4671755
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -449,6 +499,7 @@ GameObject:
   - component: {fileID: 707047965}
   - component: {fileID: 707047964}
   - component: {fileID: 707047966}
+  - component: {fileID: 707047967}
   m_Layer: 0
   m_Name: Wall (2)
   m_TagString: Obstacle
@@ -515,7 +566,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 707047963}
   m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 15, z: 0}
+  m_LocalPosition: {x: 0, y: 14.9671755, z: 0}
   m_LocalScale: {x: 1, y: 52.2, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -547,6 +598,21 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &707047967
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 707047963}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4230898db5abf34ea16f2cd220c7def, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  executeInUpdate: 1
+  anchorType: 7
+  anchorOffset: {x: 0, y: -0.5, z: 0}
 --- !u!1 &1112399130
 GameObject:
   m_ObjectHideFlags: 0
@@ -615,6 +681,7 @@ GameObject:
   - component: {fileID: 1566656331}
   - component: {fileID: 1566656330}
   - component: {fileID: 1566656332}
+  - component: {fileID: 1566656333}
   m_Layer: 0
   m_Name: Wall
   m_TagString: Obstacle
@@ -681,7 +748,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1566656329}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -26.02, y: -0.5993031, z: 0}
+  m_LocalPosition: {x: -26.58, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 31.06, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -713,6 +780,21 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &1566656333
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1566656329}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4230898db5abf34ea16f2cd220c7def, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  executeInUpdate: 1
+  anchorType: 3
+  anchorOffset: {x: 0.92, y: 0, z: 0}
 --- !u!1 &1661276378
 GameObject:
   m_ObjectHideFlags: 0
@@ -724,6 +806,7 @@ GameObject:
   - component: {fileID: 1661276380}
   - component: {fileID: 1661276379}
   - component: {fileID: 1661276381}
+  - component: {fileID: 1661276382}
   m_Layer: 0
   m_Name: Wall (1)
   m_TagString: Obstacle
@@ -790,7 +873,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1661276378}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 26, y: -0.5993031, z: 0}
+  m_LocalPosition: {x: 26.47, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 31.06, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -822,6 +905,21 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &1661276382
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1661276378}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4230898db5abf34ea16f2cd220c7def, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  executeInUpdate: 0
+  anchorType: 5
+  anchorOffset: {x: -1.03, y: 0, z: 0}
 --- !u!1 &1679899602
 GameObject:
   m_ObjectHideFlags: 0
@@ -835,6 +933,7 @@ GameObject:
   - component: {fileID: 1679899604}
   - component: {fileID: 1679899603}
   - component: {fileID: 1679899607}
+  - component: {fileID: 1679899608}
   m_Layer: 0
   m_Name: Snake
   m_TagString: Player
@@ -968,3 +1067,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   segmentPrefab: {fileID: 1126658303391195962, guid: 401470c2ffb102c45ad449d0300c2bfd, type: 3}
   initialSize: 4
+--- !u!114 &1679899608
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1679899602}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4230898db5abf34ea16f2cd220c7def, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  executeInUpdate: 0
+  anchorType: 4
+  anchorOffset: {x: 0, y: 0, z: 0}
