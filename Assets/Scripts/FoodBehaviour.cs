@@ -4,7 +4,13 @@ using UnityEngine;
 
 public class FoodBehaviour : MonoBehaviour
 {
-    public BoxCollider2D gridArea;
+    
+    public GameObject leftWall;
+    public GameObject rightWall;
+    public GameObject topWall;
+    public GameObject bottomWall;
+
+    public int threshold = 10;
 
     private void Start()
     {
@@ -13,9 +19,8 @@ public class FoodBehaviour : MonoBehaviour
 
     private void RandomizePosition()
     {
-        Bounds bounds = gridArea.bounds;
-        float x = Random.Range(bounds.min.x, bounds.max.x);
-        float y = Random.Range(bounds.min.y, bounds.max.y);
+        float x = Random.Range((int) leftWall.transform.position.x+threshold, (int)rightWall.transform.position.x-threshold);
+        float y = Random.Range((int)bottomWall.transform.position.y+threshold, (int)topWall.transform.position.y-threshold);
 
         this.transform.position = new Vector3(Mathf.Round(x), Mathf.Round(y), 0.0f);
     }

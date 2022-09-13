@@ -1,15 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class SnakeBehaviour : MonoBehaviour
 {
-    private Vector2 _direction = Vector2.right;
+    public Vector2 _direction = Vector2.right;
+    public Vector2 _lastdirection = Vector2.right;
 
     private List<Transform> _segments = new List<Transform>();
 
     public Transform segmentPrefab;
     public int initialSize = 4;
+  
 
     private void Start()
     {
@@ -38,6 +41,8 @@ public class SnakeBehaviour : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if (_direction == -_lastdirection) _direction = _lastdirection;
+
         for (int i = _segments.Count - 1; i > 0; i--)
         {
             _segments[i].position = _segments[i - 1].position;
@@ -49,6 +54,7 @@ public class SnakeBehaviour : MonoBehaviour
             this.transform.position.y + _direction.y,
             0.0f
              );
+        _lastdirection = _direction;
     }
 
     private void Grow() 
@@ -83,4 +89,6 @@ public class SnakeBehaviour : MonoBehaviour
         else if (other.tag == "Obstacle") ResetState();
         
     }
+
+
 }
