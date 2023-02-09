@@ -1,0 +1,12 @@
+{
+"dictionaries":
+[
+    {"english":
+        [{"play":"Play"},{"continue":"Continue"},{"options":"Options"},{"quit":"Quit"}]
+    },
+    {"spanish":
+        [{"play":"Jugar"},{"continue":"Continuar"},{"options":"Opciones"},{"quit":"Salir"}]
+  
+    }
+    ]
+}

@@ -8,6 +8,13 @@ public class Controllers : MonoBehaviour
 
     public static Controllers instance = null;
 
+    public AnalyticsController analyticsController;
+    public MusicPlayerController musicPlayerController;
+    public CacheController cacheController;
+    public AppController appController;
+    public LanguageController languageController;
+    public LevelController levelController;
+
     private void Awake()
     {
         //Check if instance already exists

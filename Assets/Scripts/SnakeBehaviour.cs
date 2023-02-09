@@ -7,6 +7,7 @@ public class SnakeBehaviour : MonoBehaviour
 {
     public Vector2 _direction = Vector2.right;
     public Vector2 _lastdirection = Vector2.right;
+    public GameObject sprite;
 
     private List<Transform> _segments = new List<Transform>();
 
@@ -24,10 +25,12 @@ public class SnakeBehaviour : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.W))
         {
             _direction = Vector2.up;
+            sprite.transform.eulerAngles = new Vector3(90, 0, 0);
         }
         else if (Input.GetKeyDown(KeyCode.S))
         {
             _direction = Vector2.down;
+            sprite.transform.eulerAngles = new Vector3(180, 0, 0);
         }
         else if (Input.GetKeyDown(KeyCode.D))
         {

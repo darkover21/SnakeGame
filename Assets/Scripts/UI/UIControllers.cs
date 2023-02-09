@@ -6,6 +6,14 @@ using UnityEngine.UI;
 public class UIControllers : MonoBehaviour
 {
     public static UIControllers instance;
+    public CustomPanelController customPanelController;
+
+    [Header("HomeMenu Panels")]
+    public GameObject mainMenuPanel;
+    public GameObject levelMenuPanel;
+    public GameObject languagePanel;
+    public GameObject scorePanel;
+
 
     private void Awake()
     {
@@ -29,5 +37,14 @@ public class UIControllers : MonoBehaviour
     {
         string currentScene = SceneManager.GetActiveScene().name;
 
+        if (currentScene == "HomeMenuScene") 
+        {
+            levelMenuPanel.SetActive(false);
+            mainMenuPanel.SetActive(false);
+            languagePanel.SetActive(false);
+            scorePanel.SetActive(false);
+        }
+
+        customPanelController.GoToPanel("MainMenu");
     }
 }
